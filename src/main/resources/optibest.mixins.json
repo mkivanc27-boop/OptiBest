@@ -16,8 +16,7 @@
     "BiomeColorsMixin",
     "GameOptionsMixin",
     "SoundManagerMixin",
-    "HudRendererMixin",
-    "EntityShadowMixin",
+    "HudRendererMixin"
   ],
   "injectors": { "defaultRequire": 1 },
   "targets": [
