@@ -1,6 +1,7 @@
 package com.optibest.mixin;
 
 import com.optibest.config.OptiBestConfig;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,8 +18,10 @@ public class NetworkThrottleMixin {
     private void optibest_throttleChunkPackets(ChunkDataS2CPacket packet, CallbackInfo ci) {
         if (!OptiBestConfig.networkThrottle) return;
 
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client.world == null || client.player == null) return;
+
         long now = System.currentTimeMillis();
-        // Chunk paketlerini 16ms'de bir işle
         if (now - lastChunkPacket < 16) {
             ci.cancel();
         } else {
