@@ -27,7 +27,6 @@ public class EntityRendererMixin {
         Vec3d playerPos = client.player.getPos();
         Vec3d entityPos = entity.getPos();
 
-        // 48 blok ötesi - render etme
         if (playerPos.squaredDistanceTo(entityPos) > 48 * 48) {
             ci.cancel();
             return;
@@ -35,7 +34,6 @@ public class EntityRendererMixin {
 
         if (!OptiBestConfig.frustumCulling) return;
 
-        // Kamera arkası kontrolü
         float yawRad = (float) Math.toRadians(client.player.getYaw());
         double lookX = -Math.sin(yawRad);
         double lookZ = Math.cos(yawRad);
@@ -45,8 +43,6 @@ public class EntityRendererMixin {
         if (len < 1.0) return;
 
         double dot = (lookX * dx + lookZ * dz) / len;
-        if (dot < -0.2) {
-            ci.cancel();
-        }
+        if (dot < -0.2) ci.cancel();
     }
 }
