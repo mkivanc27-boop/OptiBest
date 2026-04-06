@@ -16,8 +16,6 @@ public class BackgroundRendererMixin {
     private static void optibest_disableFog(Camera camera, BackgroundRenderer.FogType fogType,
             FogParameters fogParameters, float viewDistance,
             boolean thickenFog, float tickDelta, CallbackInfo ci) {
-        if (OptiBestConfig.fogDisabled) {
-            ci.cancel();
-        }
+        if (OptiBestConfig.fogDisabled) ci.cancel();
     }
 }
