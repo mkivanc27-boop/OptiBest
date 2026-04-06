@@ -7,12 +7,8 @@
   "authors": ["OptiBest"],
   "environment": "client",
   "entrypoints": {
-    "client": [
-      "com.optibest.OptiBestClient"
-    ],
-    "modmenu": [
-      "com.optibest.config.OptiBestModMenuIntegration"
-    ]
+    "client": ["com.optibest.OptiBestClient"],
+    "modmenu": ["com.optibest.config.OptiBestModMenuIntegration"]
   },
   "mixins": ["optibest.mixins.json"],
   "depends": {
