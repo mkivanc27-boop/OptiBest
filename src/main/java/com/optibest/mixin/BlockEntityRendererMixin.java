@@ -20,16 +20,11 @@ public class BlockEntityRendererMixin {
     private <E extends BlockEntity> void optibest_cullBlockEntities(
             E blockEntity, float tickDelta, MatrixStack matrices,
             VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
-
         if (!OptiBestConfig.blockEntityCulling) return;
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player == null) return;
-
         Vec3d playerPos = client.player.getPos();
         Vec3d bePos = Vec3d.ofCenter(blockEntity.getPos());
-
-        if (playerPos.squaredDistanceTo(bePos) > 24 * 24) {
-            ci.cancel();
-        }
+        if (playerPos.squaredDistanceTo(bePos) > 24 * 24) ci.cancel();
     }
 }
