@@ -19,8 +19,7 @@ public class ParticleManagerMixin {
             at = @At("HEAD"), cancellable = true)
     private void optibest_limitParticles(Particle particle, CallbackInfo ci) {
         if (!OptiBestConfig.particleLimit) return;
-        if (particles != null && particles.size() > OptiBestConfig.maxParticles) {
+        if (particles != null && particles.size() > OptiBestConfig.maxParticles)
             ci.cancel();
-        }
     }
 }
