@@ -1,7 +1,6 @@
 package com.optibest.mixin;
 
 import com.optibest.config.OptiBestConfig;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.WorldRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,10 +13,6 @@ public class WorldRendererMixin {
     @Inject(method = "scheduleTerrainUpdate", at = @At("HEAD"), cancellable = true)
     private void optibest_throttleTerrain(CallbackInfo ci) {
         if (!OptiBestConfig.chunkThrottling) return;
-
-        MinecraftClient client = MinecraftClient.getInstance();
-        if (client.world == null || client.player == null) return;
-
         if (System.currentTimeMillis() % 3 != 0) ci.cancel();
     }
 
