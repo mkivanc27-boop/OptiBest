@@ -15,4 +15,4 @@ public class BackgroundRendererMixin {
     private static void optibest_disableFog(CallbackInfo ci) {
         if (OptiBestConfig.fogDisabled) ci.cancel();
     }
-            }
+}
