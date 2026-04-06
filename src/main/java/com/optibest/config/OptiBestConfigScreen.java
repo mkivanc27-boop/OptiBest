@@ -62,12 +62,16 @@ public class OptiBestConfigScreen extends Screen {
                 OptiBestConfig.soundThrottle, v -> OptiBestConfig.soundThrottle = v);
         y = addToggle(centerX, y, btnWidth, "HUD Optimizasyonu",
                 OptiBestConfig.hudOptimization, v -> OptiBestConfig.hudOptimization = v);
-        y = addToggle(centerX, y, btnWidth, "Achievement Sistemi Kapalı",
-                OptiBestConfig.advancementDisable, v -> OptiBestConfig.advancementDisable = v);
-        y = addToggle(centerX, y, btnWidth, "İstatistik Takibi Kapalı",
-                OptiBestConfig.statisticsDisable, v -> OptiBestConfig.statisticsDisable = v);
         y = addToggle(centerX, y, btnWidth, "Item Render Cache",
                 OptiBestConfig.itemRenderCache, v -> OptiBestConfig.itemRenderCache = v);
+        y = addToggle(centerX, y, btnWidth, "Harita Render Kapalı",
+                OptiBestConfig.mapRenderOff, v -> OptiBestConfig.mapRenderOff = v);
+        y = addToggle(centerX, y, btnWidth, "Entity Gölgesi Kapalı",
+                OptiBestConfig.noEntityShadow, v -> OptiBestConfig.noEntityShadow = v);
+        y = addToggle(centerX, y, btnWidth, "Düşük Mipmap",
+                OptiBestConfig.reducedMipmaps, v -> OptiBestConfig.reducedMipmaps = v);
+        y = addToggle(centerX, y, btnWidth, "Uzak Block Entity Culling",
+                OptiBestConfig.skipOffscreenBlockEntities, v -> OptiBestConfig.skipOffscreenBlockEntities = v);
 
         totalHeight = y + (int) scrollOffset - TOP_PADDING;
 
