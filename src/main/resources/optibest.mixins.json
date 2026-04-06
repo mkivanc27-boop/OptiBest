@@ -18,9 +18,5 @@
     "SoundManagerMixin",
     "HudRendererMixin"
   ],
-  "injectors": { "defaultRequire": 1 },
-  "targets": [
-    "net.minecraft.client.render.item.ItemRenderer"
-  ],
-  "refmap": "OptiBest-refmap.json"
+  "injectors": { "defaultRequire": 1 }
 }
