@@ -12,7 +12,6 @@
     "LightingMixin",
     "EntityCullMixin",
     "SkyRendererMixin",
-    "WeatherRendererMixin",
     "BlockEntityRendererMixin",
     "BiomeColorsMixin",
     "GameOptionsMixin"
