@@ -13,6 +13,6 @@ public class GameOptionsMixin {
     private void optibest_lockSettings(CallbackInfo ci) {
         GameOptions opts = (GameOptions)(Object)this;
         opts.getMipmapLevels().setValue(0);
-        opts.getEntityDistanceScaling().setValue(0.5f);
+        opts.getEntityDistanceScaling().setValue(0.5);
     }
 }
