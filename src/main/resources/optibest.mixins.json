@@ -17,7 +17,6 @@
     "GameOptionsMixin",
     "SoundManagerMixin",
     "HudRendererMixin",
-    "MapRendererMixin",
     "EntityShadowMixin",
     "TileEntityCullMixin"
   ],
