@@ -22,5 +22,9 @@
     "ItemRendererMixin",
     "NetworkThrottleMixin"
   ],
-  "injectors": { "defaultRequire": 1 }
+  "injectors": { "defaultRequire": 1 },
+  "targets": [
+    "net.minecraft.client.render.item.ItemRenderer"
+  ],
+  "refmap": "OptiBest-refmap.json"
 }
