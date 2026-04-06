@@ -15,9 +15,7 @@ public class LightingMixin {
     @Inject(method = "update", at = @At("HEAD"), cancellable = true)
     private void optibest_throttleLighting(float tickDelta, CallbackInfo ci) {
         if (!OptiBestConfig.memoryOptimization) return;
-
         long now = System.currentTimeMillis();
-        // Işık güncellemelerini 100ms'de bir ile sınırla
         if (now - lastLightUpdate < 100) {
             ci.cancel();
         } else {
