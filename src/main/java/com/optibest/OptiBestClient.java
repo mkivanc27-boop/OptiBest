@@ -37,7 +37,7 @@ public class OptiBestClient implements ClientModInitializer {
             if (OptiBestConfig.smoothLightingOff)
                 client.options.getAo().setValue(false);
 
-            client.options.getEntityDistanceScaling().setValue(0.5f);
+            client.options.getEntityDistanceScaling().setValue(0.5);
             client.options.getMipmapLevels().setValue(0);
         });
     }
