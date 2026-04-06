@@ -66,8 +66,6 @@ public class OptiBestConfigScreen extends Screen {
                 OptiBestConfig.itemRenderCache, v -> OptiBestConfig.itemRenderCache = v);
         y = addToggle(centerX, y, btnWidth, "Entity Gölgesi Kapalı",
                 OptiBestConfig.noEntityShadow, v -> OptiBestConfig.noEntityShadow = v);
-        y = addToggle(centerX, y, btnWidth, "Uzak Block Entity Culling",
-                OptiBestConfig.skipOffscreenBlockEntities, v -> OptiBestConfig.skipOffscreenBlockEntities = v);
 
         totalHeight = y + (int) scrollOffset - TOP_PADDING;
 
