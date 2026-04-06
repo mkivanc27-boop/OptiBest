@@ -10,7 +10,12 @@
     "BackgroundRendererMixin",
     "ChunkBuilderMixin",
     "LightingMixin",
-    "EntityCullMixin"
+    "EntityCullMixin",
+    "SkyRendererMixin",
+    "WeatherRendererMixin",
+    "BlockEntityRendererMixin",
+    "BiomeColorsMixin",
+    "GameOptionsMixin"
   ],
   "injectors": { "defaultRequire": 1 }
 }
