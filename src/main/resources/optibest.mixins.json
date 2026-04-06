@@ -19,7 +19,6 @@
     "HudRendererMixin",
     "MapRendererMixin",
     "EntityShadowMixin",
-    "MipmapMixin",
     "TileEntityCullMixin"
   ],
   "injectors": { "defaultRequire": 1 },
