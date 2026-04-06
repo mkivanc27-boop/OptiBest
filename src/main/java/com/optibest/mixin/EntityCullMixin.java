@@ -3,7 +3,6 @@ package com.optibest.mixin;
 import com.optibest.config.OptiBestConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,18 +14,12 @@ public class EntityCullMixin {
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     private void optibest_skipDistantEntityTick(CallbackInfo ci) {
         if (!OptiBestConfig.entityTickOptimization) return;
-
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player == null) return;
-
         Entity self = (Entity)(Object)this;
         double distSq = client.player.getPos().squaredDistanceTo(self.getPos());
-
-        // 64 blok ötedeki entity'lerin tick'ini 3'te 1 oranında atla
-        if (distSq > 64 * 64) {
-            if (System.currentTimeMillis() % 3 != 0) {
-                ci.cancel();
-            }
+        if (distSq > 64 * 64 && System.currentTimeMillis() % 3 != 0) {
+            ci.cancel();
         }
     }
 }
