@@ -19,7 +19,6 @@
     "HudRendererMixin",
     "AdvancementMixin",
     "StatisticsMixin",
-    "NetworkThrottleMixin"
   ],
   "injectors": { "defaultRequire": 1 },
   "targets": [
