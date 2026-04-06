@@ -41,4 +41,8 @@ public class OptiBestConfig {
     public static boolean soundThrottle = true;
     public static boolean hudOptimization = true;
     public static boolean itemRenderCache = true;
+    public static boolean mapRenderOff = true;
+    public static boolean noEntityShadow = true;
+    public static boolean reducedMipmaps = true;
+    public static boolean skipOffscreenBlockEntities = true;
 }
