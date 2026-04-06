@@ -14,7 +14,13 @@
     "SkyRendererMixin",
     "BlockEntityRendererMixin",
     "BiomeColorsMixin",
-    "GameOptionsMixin"
+    "GameOptionsMixin",
+    "SoundManagerMixin",
+    "HudRendererMixin",
+    "AdvancementMixin",
+    "StatisticsMixin",
+    "ItemRendererMixin",
+    "NetworkThrottleMixin"
   ],
   "injectors": { "defaultRequire": 1 }
 }
