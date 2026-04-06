@@ -43,5 +43,4 @@ public class OptiBestConfig {
     public static boolean advancementDisable = true;
     public static boolean statisticsDisable = true;
     public static boolean itemRenderCache = true;
-    public static boolean networkThrottle = true;
 }
