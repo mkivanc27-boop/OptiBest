@@ -31,9 +31,17 @@ public class OptiBestConfig {
     public static int targetViewDistance = 4;
     public static boolean fastGraphics = true;
 
-    // === LİTHİUM BENZERİ ===
+    // === ENTİTY ===
     public static boolean entityTickOptimization = true;
 
-    // === FERRİTE CORE BENZERİ ===
+    // === BELLEK ===
     public static boolean memoryOptimization = true;
+
+    // === YENİ AYARLAR ===
+    public static boolean soundThrottle = true;
+    public static boolean hudOptimization = true;
+    public static boolean advancementDisable = true;
+    public static boolean statisticsDisable = true;
+    public static boolean itemRenderCache = true;
+    public static boolean networkThrottle = true;
 }
