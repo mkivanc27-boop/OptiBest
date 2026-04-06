@@ -13,8 +13,11 @@ public class WorldRendererMixin {
     @Inject(method = "scheduleTerrainUpdate", at = @At("HEAD"), cancellable = true)
     private void optibest_throttleTerrain(CallbackInfo ci) {
         if (!OptiBestConfig.chunkThrottling) return;
-        if (System.currentTimeMillis() % 3 != 0) {
-            ci.cancel();
-        }
+        if (System.currentTimeMillis() % 3 != 0) ci.cancel();
+    }
+
+    @Inject(method = "renderWeather", at = @At("HEAD"), cancellable = true)
+    private void optibest_disableWeather(CallbackInfo ci) {
+        if (OptiBestConfig.weatherRenderOff) ci.cancel();
     }
 }
