@@ -4,8 +4,8 @@ import com.optibest.config.OptiBestConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.state.EntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EntityRendererMixin {
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    private <T extends Entity> void optibest_cullEntities(T entity, float yaw, float tickDelta,
+    private <S extends EntityRenderState> void optibest_cullEntities(S state,
             MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
 
         if (!OptiBestConfig.entityCulling) return;
@@ -25,7 +25,7 @@ public class EntityRendererMixin {
         if (client.player == null) return;
 
         Vec3d playerPos = client.player.getPos();
-        Vec3d entityPos = entity.getPos();
+        Vec3d entityPos = new Vec3d(state.x, state.y, state.z);
 
         if (playerPos.squaredDistanceTo(entityPos) > 48 * 48) {
             ci.cancel();
