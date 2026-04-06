@@ -3,9 +3,7 @@ name: Build OptiBest
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:  # Elle de başlatabilirsin
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,15 +19,21 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Gradle Cache (Hızlandırır)
+      - name: Gradle Cache
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+
+      - name: Gradle Wrapper Oluştur
+        run: |
+          gradle wrapper --gradle-version 8.8
+        env:
+          GRADLE_VERSION: '8.8'
 
       - name: Gradle İzni Ver
         run: chmod +x gradlew
@@ -37,7 +41,7 @@ jobs:
       - name: JAR Derle
         run: ./gradlew build --no-daemon
 
-      - name: JAR'ı Yükle (İndirebilirsin)
+      - name: JAR'ı Yükle
         uses: actions/upload-artifact@v4
         with:
           name: OptiBest-1.0.0
