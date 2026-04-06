@@ -5,7 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.option.CloudRenderMode;
 import net.minecraft.client.option.GraphicsMode;
-import net.minecraft.client.option.ParticlesMode;
+import net.minecraft.particle.ParticleTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,13 +37,7 @@ public class OptiBestClient implements ClientModInitializer {
             if (OptiBestConfig.smoothLightingOff)
                 client.options.getAo().setValue(false);
 
-            if (OptiBestConfig.particleLimit)
-                client.options.getParticles().setValue(ParticlesMode.MINIMAL);
-
-            // Entity görüş mesafesi %50
             client.options.getEntityDistanceScaling().setValue(0.5f);
-
-            // Mipmap sıfır
             client.options.getMipmapLevels().setValue(0);
         });
     }
