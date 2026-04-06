@@ -15,9 +15,7 @@ public class ChunkBuilderMixin {
     @Inject(method = "scheduleRebuild", at = @At("HEAD"), cancellable = true)
     private void optibest_limitChunkRebuilds(CallbackInfo ci) {
         if (!OptiBestConfig.chunkCacheOptimization) return;
-
         long now = System.currentTimeMillis();
-        // Chunk rebuild'leri 50ms'de bir ile sınırla
         if (now - lastBuild < 50) {
             ci.cancel();
         } else {
