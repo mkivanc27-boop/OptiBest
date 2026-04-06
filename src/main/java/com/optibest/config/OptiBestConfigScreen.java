@@ -64,8 +64,6 @@ public class OptiBestConfigScreen extends Screen {
                 OptiBestConfig.hudOptimization, v -> OptiBestConfig.hudOptimization = v);
         y = addToggle(centerX, y, btnWidth, "Item Render Cache",
                 OptiBestConfig.itemRenderCache, v -> OptiBestConfig.itemRenderCache = v);
-        y = addToggle(centerX, y, btnWidth, "Harita Render Kapalı",
-                OptiBestConfig.mapRenderOff, v -> OptiBestConfig.mapRenderOff = v);
         y = addToggle(centerX, y, btnWidth, "Entity Gölgesi Kapalı",
                 OptiBestConfig.noEntityShadow, v -> OptiBestConfig.noEntityShadow = v);
         y = addToggle(centerX, y, btnWidth, "Uzak Block Entity Culling",
