@@ -68,8 +68,6 @@ public class OptiBestConfigScreen extends Screen {
                 OptiBestConfig.mapRenderOff, v -> OptiBestConfig.mapRenderOff = v);
         y = addToggle(centerX, y, btnWidth, "Entity Gölgesi Kapalı",
                 OptiBestConfig.noEntityShadow, v -> OptiBestConfig.noEntityShadow = v);
-        y = addToggle(centerX, y, btnWidth, "Düşük Mipmap",
-                OptiBestConfig.reducedMipmaps, v -> OptiBestConfig.reducedMipmaps = v);
         y = addToggle(centerX, y, btnWidth, "Uzak Block Entity Culling",
                 OptiBestConfig.skipOffscreenBlockEntities, v -> OptiBestConfig.skipOffscreenBlockEntities = v);
 
@@ -130,4 +128,4 @@ public class OptiBestConfigScreen extends Screen {
         assert this.client != null;
         this.client.setScreen(parent);
     }
-}
+                      }
