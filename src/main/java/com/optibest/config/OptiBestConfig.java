@@ -40,7 +40,5 @@ public class OptiBestConfig {
     // === YENİ AYARLAR ===
     public static boolean soundThrottle = true;
     public static boolean hudOptimization = true;
-    public static boolean advancementDisable = true;
-    public static boolean statisticsDisable = true;
     public static boolean itemRenderCache = true;
 }
