@@ -7,17 +7,19 @@
   "authors": ["OptiBest"],
   "environment": "client",
   "entrypoints": {
-    "client": ["com.optibest.OptiBestClient"],
-    "modmenu": ["com.optibest.config.OptiBestModMenuIntegration"]
+    "client": [
+      "com.optibest.OptiBestClient"
+    ],
+    "modmenu": [
+      "com.optibest.config.OptiBestModMenuIntegration"
+    ]
   },
   "mixins": ["optibest.mixins.json"],
   "depends": {
     "fabricloader": ">=0.16.10",
     "minecraft": "~1.21.4",
     "java": ">=21",
-    "fabric-api": "*"
-  },
-  "suggests": {
+    "fabric-api": "*",
     "modmenu": "*"
   }
 }
