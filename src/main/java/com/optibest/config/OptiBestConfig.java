@@ -2,29 +2,38 @@ package com.optibest.config;
 
 public class OptiBestConfig {
 
-    // === RENDER OPTİMİZASYONLARI ===
-    public static boolean entityCulling = true;        // Görünmez entity'leri render etme
-    public static boolean frustumCulling = true;       // Kamera dışını render etme
-    public static boolean fogDisabled = true;          // Fog kapat
-    public static boolean entityShadowsDisabled = true;// Entity gölgeleri kapat
-    public static boolean cloudRenderOff = true;       // Bulutları kapat
+    // === RENDER ===
+    public static boolean entityCulling = true;
+    public static boolean frustumCulling = true;
+    public static boolean fogDisabled = true;
+    public static boolean entityShadowsDisabled = true;
+    public static boolean cloudRenderOff = true;
+    public static boolean skyRenderOff = true;
+    public static boolean weatherRenderOff = true;
 
-    // === CHUNK OPTİMİZASYONLARI ===
-    public static boolean chunkThrottling = true;      // Chunk güncelleme sınırlama
-    public static boolean smoothLightingOff = false;   // Smooth lighting kapat (opsiyonel)
+    // === CHUNK ===
+    public static boolean chunkThrottling = true;
+    public static boolean smoothLightingOff = false;
+    public static boolean chunkCacheOptimization = true;
 
-    // === PARTİKÜL OPTİMİZASYONLARI ===
-    public static boolean particleLimit = true;        // Partikül sınırı
-    public static int maxParticles = 10;               // Max partikül sayısı
+    // === PARTİKÜL ===
+    public static boolean particleLimit = true;
+    public static int maxParticles = 10;
 
-    // === GENEL AYARLAR ===
-    public static boolean unlimitedFps = true;         // FPS sınırı kaldır
-    public static int targetViewDistance = 4;          // Sabit render mesafesi
-    public static boolean fastGraphics = true;         // FAST grafik modu
+    // === BLOCK ENTITY ===
+    public static boolean blockEntityCulling = true;
+
+    // === BİOME ===
+    public static boolean biomeBlendsOff = true;
+
+    // === GENEL ===
+    public static boolean unlimitedFps = true;
+    public static int targetViewDistance = 4;
+    public static boolean fastGraphics = true;
 
     // === LİTHİUM BENZERİ ===
-    public static boolean entityTickOptimization = true;  // Uzak entity tick'leri atla
-    public static boolean chunkCacheOptimization = true;  // Chunk cache optimizasyonu
+    public static boolean entityTickOptimization = true;
 
     // === FERRİTE CORE BENZERİ ===
-    public static boolean memoryOptimization
+    public static boolean memoryOptimization = true;
+}
