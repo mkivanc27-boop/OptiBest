@@ -1,6 +1,7 @@
 package com.optibest.mixin;
 
 import com.optibest.config.OptiBestConfig;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.chunk.ChunkBuilder;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,6 +16,10 @@ public class ChunkBuilderMixin {
     @Inject(method = "scheduleRebuild", at = @At("HEAD"), cancellable = true)
     private void optibest_limitChunkRebuilds(CallbackInfo ci) {
         if (!OptiBestConfig.chunkCacheOptimization) return;
+
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client.world == null || client.player == null) return;
+
         long now = System.currentTimeMillis();
         if (now - lastBuild < 50) {
             ci.cancel();
