@@ -41,5 +41,4 @@ public class OptiBestConfig {
     public static boolean soundThrottle = true;
     public static boolean hudOptimization = true;
     public static boolean itemRenderCache = true;
-    public static boolean noEntityShadow = true;
 }
